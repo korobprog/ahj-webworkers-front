@@ -1,15 +1,8 @@
-/**
- * Entry point of app: don't change this
- */
-import GamePlay from './GamePlay';
-import GameController from './GameController';
-import GameStateService from './GameStateService';
+import Widget from './widget';
 
-const gamePlay = new GamePlay();
-// eslint-disable-next-line
-gamePlay.bindToDOM(document.querySelector('#game-container'));
-// eslint-disable-next-line
-const stateService = new GameStateService(localStorage);
+export default function app() {
+  const widget = new Widget();
+  widget.init();
+}
 
-const gameCtrl = new GameController(gamePlay, stateService);
-gameCtrl.init();
+app();
